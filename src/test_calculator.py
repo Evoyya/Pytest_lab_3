@@ -55,7 +55,7 @@ class TestCalculateCommissionBoundary:
     )
     def test_boundary_values(self, amount, expected):
         """Проверяет поведение на границах тарифных диапазонов."""
-        if  not 100 < amount < 50_000:
+        if  not (100 <= amount <= 50_000):
             with pytest.raises(ValueError):
                 calculate_commission(amount)
         else:

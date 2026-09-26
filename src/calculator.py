@@ -33,7 +33,7 @@ def _validate_amount(amount: Union[int, float]) -> None:
             f"Сумма должна быть числом, получено: {type(amount).__name__}"
         )
 
-    if not MIN_AMOUNT < amount < MAX_AMOUNT:
+    if not (MIN_AMOUNT <= amount <= MAX_AMOUNT):
         raise ValueError(
             f"Сумма перевода должна быть от {MIN_AMOUNT} до {MAX_AMOUNT} руб."
         )
